@@ -1,0 +1,48 @@
+@wh: calc((100% - 2px) / 3);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 标准九宫格，三行三列，容器宽高固定
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, @wh);
+  grid-template-rows: repeat(3, @wh);
+  grid-gap: 1px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+
+  div {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: pink;
+  }
+}
+
+// 扩展九宫格，多行三列，容器宽固定，高不固定
+// .container {
+//   display: grid;
+//   grid-template-columns: repeat(3, @wh);
+//   grid-gap: 1px;
+//   width: 300px;
+//   height: auto; // 高度不固定，可在九宫格基础上扩展，图片数量不作限制
+
+//   div {
+//     display: grid;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: pink;
+
+//     aspect-ratio: 1 / 1; // 控制宽高相等，不确定是否有兼容性问题
+//   }
+// }
