@@ -21,6 +21,8 @@ const renderImgWatermark = () => {
   old_img.setAttribute("crossOrigin", "anonymous");
   old_img.src = "https://s2.loli.net/2022/11/08/XHKjlEcCAvs2RBI.jpg";
 
+  // 不加 load 事件，图片未加载完全，是拿不到图片自身的宽高的
+  // 图片未加载完全，也没法将图片绘制到画布上
   old_img.addEventListener("load", async () => {
     // 创建画布
     const canvas = document.createElement("canvas");
