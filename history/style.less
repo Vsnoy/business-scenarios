@@ -11,26 +11,36 @@ body {
 
 .container {
   width: 250px;
-  height: 100px;
+  height: auto;
 
   input {
     width: 100%;
+    box-sizing: border-box;
   }
 
   .history {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     align-content: flex-start;
-    background-color: pink;
+    background-color: green;
 
     .key {
+      width: auto;
+
+      // 高20px，上边距5px，一行历史记录算作25px
+      height: 20px;
+      line-height: 20px;
+      padding: 0 5px;
+      margin: 5px 5px 0 0;
+
       font-size: 12px;
-      padding: 3px 5px;
       margin-right: 5px;
       border-radius: 20px;
-      background-color: #fff;
+      background-color: pink;
 
       // 单个词条最大占满一行，超出省略号展示
       max-width: 100%;
